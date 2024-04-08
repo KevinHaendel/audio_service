@@ -12,11 +12,13 @@ import io.flutter.embedding.engine.FlutterEngine;
 public class AudioServiceFragmentActivity extends FlutterFragmentActivity {
     @Override
     public FlutterEngine provideFlutterEngine(@NonNull Context context) {
+        AudioServicePlugin.setArmStartup(true);
         return AudioServicePlugin.getFlutterEngine(context);
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        AudioServicePlugin.setArmStartup(true);
         AudioServicePlugin.getFlutterEngine(this);
         super.onCreate(savedInstanceState);
     }
