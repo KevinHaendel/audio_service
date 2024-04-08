@@ -87,6 +87,15 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                         }
                     }
                 }
+            } else if (context instanceof FlutterFragmentActivity) {
+                final FlutterFragmentActivity activity = (FlutterFragmentActivity)context;
+                Uri data = activity.getIntent().getData();
+                if (data != null) {
+                    initialRoute = data.getPath();
+                    if (data.getQuery() != null && !data.getQuery().isEmpty()) {
+                        initialRoute += "?" + data.getQuery();
+                    }
+                }
             }
             if (initialRoute == null) {
                 initialRoute = "/";
