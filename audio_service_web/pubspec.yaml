@@ -20,7 +20,12 @@ dependencies:
   #     path: audio_service_platform_interface
 
   # Use these deps when publishing.
-  audio_service_platform_interface: ^0.1.1
+  audio_service_platform_interface:
+    git:
+      url: https://github.com/KevinHaendel/audio_service.git
+      ref: minor
+      path: audio_service_platform_interface
+
 
   rxdart: '>=0.26.0 <0.28.0'
   js: '>=0.6.3 <0.8.0'
